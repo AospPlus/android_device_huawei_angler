@@ -225,6 +225,9 @@ DEVICE_PACKAGE_OVERLAYS := \
     device/huawei/angler/overlay
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    net.hostname=angler
+
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609
 
 PRODUCT_PROPERTY_OVERRIDES += \
