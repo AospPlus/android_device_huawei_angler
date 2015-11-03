@@ -297,6 +297,10 @@
          and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOff">true</bool>
 
+    <!-- Really enable doze
+         according to https://source.android.com/devices/tech/power/mgmt.html it's disabled in AOSP unless this value is true -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+
     <!-- Specifies whether to decouple the interactive state of the device from the display on/off state. -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
