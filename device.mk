@@ -19,6 +19,7 @@
 #
 # Everything in this directory will become public
 
+GAPPS_VARIANT := mini
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/huawei/angler-kernel/Image.gz-dtb
@@ -224,6 +225,12 @@ PRODUCT_COPY_FILES += \
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/huawei/angler/overlay
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    net.hostname=angler
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=460
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609
