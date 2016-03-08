@@ -31,6 +31,12 @@ PRODUCT_COPY_FILES := \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
+    device/huawei/angler/recovery/root/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
+    device/huawei/angler/recovery/root/init.recovery.angler.rc:root/init.recovery.angler.rc \
+    device/huawei/angler/recovery/root/sbin/qseecomd:recovery/root/sbin/qseecomd \
+    device/huawei/angler/recovery/root/sbin/pulldecryptfiles.sh:recovery/root/sbin/pulldecryptfiles.sh
+
+PRODUCT_COPY_FILES += \
     device/huawei/angler/init.angler.rc:root/init.angler.rc \
     device/huawei/angler/init.angler.sensorhub.rc:root/init.angler.sensorhub.rc \
     device/huawei/angler/init.angler.usb.rc:root/init.angler.usb.rc \
@@ -227,6 +233,9 @@ DEVICE_PACKAGE_OVERLAYS := \
     device/huawei/angler/overlay
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.adb.secure=0
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     net.hostname=angler
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -246,7 +255,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.data_no_toggle=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.radio.data_con_rprt=true
+  persist.radio.data_con_rprt=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.texture_cache_size=72 \
